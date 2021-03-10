@@ -93,3 +93,37 @@ head, *tail = [1, 2, 3, 4, 5]
 
 print(head)
 print(tail)
+
+
+# functions (already understand this section)
+
+# function arguments and parameters
+def say_hello(name, surname):
+    print(f"{name},{surname}")
+
+
+# positional argument
+say_hello("Bob", "Smith")
+
+# keyword argument
+say_hello(surname="Smith", name="Bob")
+
+# mix argument type
+say_hello("Bob", surname="Smith")
+
+# default function parameter values (already understand this section)
+
+# Function returning values
+# return by default return "none"
+# return statement terminate function
+
+# lambda functions
+add = lambda num1, num2: num1 + num2
+
+print(add(5, 7))
+
+seq = [1, 2, 3, 4]
+doubled = map(lambda x: x * 2, seq)
+
+print(list(doubled))
+
