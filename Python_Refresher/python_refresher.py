@@ -109,9 +109,8 @@ say_hello("Bob", "Smith")
 say_hello(surname="Smith", name="Bob")
 
 # mix argument type
-say_hello("Bob", surname="Smith")
-
 # positional argument go first and any keyword argument go at the end
+say_hello("Bob", surname="Smith")
 
 # default function parameter values (already understand this section)
 
@@ -177,3 +176,29 @@ nums = [3, 5]
 print(add(*nums))
 
 
+# keyword arguments
+# return dict
+def named(**kwargs):
+    print(kwargs)
+
+
+named(name="Bob", age="25")
+
+
+# destruct kwargs
+def named(name, age):
+    print(name, age)
+
+
+details = {"name": "Bob", "age": 25}
+
+named(**details)
+
+
+# loop through kwargs
+def print_nicely(**kwargs):
+    for arg, value in kwargs.items():
+        print(f"{arg}: {value}")
+
+
+print_nicely(name="Bob", age="25")
