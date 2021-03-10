@@ -111,6 +111,8 @@ say_hello(surname="Smith", name="Bob")
 # mix argument type
 say_hello("Bob", surname="Smith")
 
+# positional argument go first and any keyword argument go at the end
+
 # default function parameter values (already understand this section)
 
 # Function returning values
@@ -126,4 +128,52 @@ seq = [1, 2, 3, 4]
 doubled = map(lambda x: x * 2, seq)
 
 print(list(doubled))
+
+# dictionary comprehensions
+users = [
+    (0, "Bob", "password"),
+    (1, "Rolf", "bob123")
+]
+
+username_mapping = {user[1]: user for user in users}
+
+print(username_mapping)
+
+
+# unpacking function arguments
+# pass in multiple arguments
+def multiply(*args):
+    print(args)
+    total = 1
+
+    for arg in args:
+        total *= arg
+
+    return total
+
+
+print(multiply(1, 3, 5))
+
+
+# pass in multiple arguments and one keyword argument
+def apply(*args, operator):
+    if operator == "*":
+        return multiply(*args)
+    elif operator == "+":
+        return sum(args)
+    else:
+        return "No valid operator provided."
+
+
+print(apply(1, 3, 6, 7, operator="*"))
+
+
+# destruct multiple arguments
+def add(x, y):
+    return x + y
+
+
+nums = [3, 5]
+print(add(*nums))
+
 
