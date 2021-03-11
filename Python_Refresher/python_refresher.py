@@ -247,10 +247,12 @@ class ClassTest:
     def instance_method(self):
         print(f"Called instance method of {self}")
 
+    # Factory methods return class object ( similar to a constructor ) for different use cases.
     @classmethod
     def class_method(cls):
         print(f"Called class method of {cls}")
 
+    # generally use static methods to create utility functions
     @staticmethod
     def static_method():
         print("Called static method")
