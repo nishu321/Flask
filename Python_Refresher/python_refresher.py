@@ -202,3 +202,83 @@ def print_nicely(**kwargs):
 
 
 print_nicely(name="Bob", age="25")
+
+
+# Object - Oriented
+# class is object blueprint
+class Studnet():
+    def __init__(self, name, grades):
+        self.name = name
+        self.grades = grades
+
+    def avg_grage(self):
+        return sum(self.grades) / len(self.grades)
+
+
+# create objects
+student = Studnet("Rolf", (90, 90, 93, 78, 90))
+student2 = Studnet("Rolf", (100, 90, 93, 78, 100))
+
+print(student.avg_grage())
+print(student2.avg_grage())
+
+
+# Magic methods
+class Person:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+    # print a string representation of the object
+    def __str__(self):
+        return f"This person {self.name}, {self.age} years old"
+
+    # print an ambiguous representation of the object for programmers
+    def __repr__(self):
+        return f"<Person({self.name}, {self.age}"
+
+
+bob = Person("Bob", 35)
+print(bob)
+
+
+# @classmethod and @staticmethod
+class ClassTest:
+    def instance_method(self):
+        print(f"Called instance method of {self}")
+
+    @classmethod
+    def class_method(cls):
+        print(f"Called class method of {cls}")
+
+    @staticmethod
+    def static_method():
+        print("Called static method")
+
+
+test = ClassTest()
+test.instance_method()
+
+ClassTest.class_method()
+
+ClassTest.static_method()
+
+
+class Book:
+    TYPES = ("hardcover", "paperback")
+
+    def __init__(self, name, book_type, weight):
+        self.name = name
+        self.book_type = book_type
+        self.weight = weight
+
+    def __repr__(self):
+        return f"<Book {self.name}, {self.book_type}, {self.weight}"
+
+    @classmethod
+    def hard_cover(cls, name, page_weight):
+        return cls(name, Book.TYPES[0], page_weight + 100)
+
+
+book = Book.hard_cover("Harry Potter", 1500)
+print(book)
