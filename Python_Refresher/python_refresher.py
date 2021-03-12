@@ -322,3 +322,52 @@ printer = Printer("Printer", "USB", 500)
 printer.print(20)
 
 print(printer)
+
+
+# multi level inheritance
+class A:
+    def f1(self):
+        return "f1"
+
+    def f2(self):
+        return "f2"
+
+
+class B(A):
+    def f3(self):
+        return "f3"
+
+    def f4(self):
+        return "f4"
+
+
+class C(B):
+    def f5(self):
+        return "f5"
+
+    def f6(self):
+        return "f6"
+
+# multiple inheritance
+class A:
+    def f1(self):
+        return "f1"
+
+    def f2(self):
+        return "f2"
+
+
+class B():
+    def f3(self):
+        return "f3"
+
+    def f4(self):
+        return "f4"
+
+
+class C(A,B):
+    def f5(self):
+        return "f5"
+
+    def f6(self):
+        return "f6"
