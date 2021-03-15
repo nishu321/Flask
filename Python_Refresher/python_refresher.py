@@ -348,6 +348,7 @@ class C(B):
     def f6(self):
         return "f6"
 
+
 # multiple inheritance
 class A:
     def f1(self):
@@ -365,9 +366,43 @@ class B():
         return "f4"
 
 
-class C(A,B):
+class C(A, B):
     def f5(self):
         return "f5"
 
     def f6(self):
         return "f6"
+
+
+# class composition
+class BookShelf:
+    def __init__(self, *books):
+        self.books = books
+
+    def __str__(self):
+        return f"Bookshelf with {len(self.books)} books."
+
+
+class Book:
+    def __init__(self, name):
+        self.name = name
+
+    def __str__(self):
+        return f"Book {self.name}"
+
+
+book1 = Book("Harry Potter")
+book2 = Book("Python 101")
+
+shelf = BookShelf(book1, book2)
+print(shelf)
+
+
+# type hinting
+# tell what type the variable should be and tell what  the output type will be
+def list_avg(seq: list) -> float:
+    return sum(seq) / len(seq)
+
+
+list_avg(123)
+
