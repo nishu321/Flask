@@ -404,5 +404,62 @@ def list_avg(seq: list) -> float:
     return sum(seq) / len(seq)
 
 
-list_avg(123)
+# list_avg(123)
 
+
+# imports (already understand this section)
+
+# Relative imports
+# using . to import from current folder
+# don't use relative imports just absolute
+
+# errors in python
+def divide(dividened, divisor):
+    return dividened / divisor
+
+
+grades = []
+
+# finally always runs even if there is an error or not
+# else only runs if the program passes the try
+# put specific except to the top and general excepting to the bottom
+print("Welcome to the average grade program.")
+try:
+    average = divide(sum(grades), len(grades))
+except ZeroDivisionError:
+    print("There are no grades yet in your list.")
+else:
+    print(f"The average grade is {average}")
+finally:
+    print("Thank You!")
+
+
+# custom error handling
+class TooManyPagesReadError(ValueError):
+    pass
+
+
+class Book:
+    def __init__(self, name, page_count):
+        self.name = name
+        self.page_count = page_count
+        self.pages_read = 0
+
+    def __repr__(self):
+        return f"<Book {self.name}, read {self.pages_read} pages out of {self.page_count}"
+
+    def read(self, pages):
+        if self.pages_read + pages > self.page_count:
+            raise TooManyPagesReadError(
+                f"You tried to read {self.pages_read + pages} pages, but this book only has "
+                f"{self.page_count} pages")
+        self.pages_read += pages
+        print(f"You have now read {self.pages_read} pages out of {self.page_count}")
+
+
+book1 = Book("Python 101", 50)
+try:
+    book1.read(35)
+    book1.read(50)
+except TooManyPagesReadError as e:
+    print(e)
