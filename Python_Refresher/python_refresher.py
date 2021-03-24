@@ -466,6 +466,7 @@ except TooManyPagesReadError as e:
 
 
 # first class functions
+# pass in a functions as a argument
 def divide(dividened, divisor):
     if divisor == 0:
         raise ZeroDivisionError("Divisor cannot be 0.")
@@ -495,6 +496,7 @@ friends = [
     {"name": "Anne Pun", "age": 27}
 ]
 
+
 def get_friend_name(friend):
     return friend["name"]
 
@@ -503,3 +505,30 @@ try:
     print(search(friends, "Bob Smith", get_friend_name))
 except RuntimeError as e:
     print(e)
+
+# Mutability in python
+a = []
+b = a
+
+a.append(35)
+
+print(a)
+print(b)
+
+
+# Mutable default parameters
+# bad to use mutable types for default parameter
+class Students:
+    def __init__(self, name, grades=[]):
+        self.name = name
+        self.grades = grades
+
+    def take_exam(self, result):
+        self.grades.append(result)
+
+
+bob = Students("Bob")
+rolf = Students("Rolf")
+bob.take_exam(90)
+print(bob.grades)
+print(rolf.grades)
