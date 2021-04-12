@@ -1,0 +1,19 @@
+/*
+overridng browers default values
+*/
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+header h1{
+	color: rgb(252, 44, 3);
+}
+
+h1 {
+	color: blue;
+}
+
+ul{
+	padding: 50px;
+}
