@@ -1,19 +1,21 @@
 /*
 overridng browers default values
 */
-*{
+* {
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
 }
-header h1{
-	color: rgb(252, 44, 3);
+
+body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Ubuntu, sans-serif;
+	color: #002244;
 }
 
-h1 {
-	color: blue;
+.container {
+	color: red;
 }
 
-ul{
-	padding: 50px;
+a {
+	color: inherit;
 }
