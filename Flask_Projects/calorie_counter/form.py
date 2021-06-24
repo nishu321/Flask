@@ -10,7 +10,7 @@ class Counter(FlaskForm):
 
     age = IntegerField(
         "Age",
-        validators=[DataRequired(),Length(min=2, max=3,message="Please enter validate age.")]
+        validators=[DataRequired()]
     )
 
     weight = IntegerField(
