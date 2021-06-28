@@ -1,3 +1,4 @@
+import re
 from flask import Flask, render_template, url_for
 from helper import users,user_keys
 from form import Counter
@@ -14,5 +15,10 @@ def index():
 def user_info(id):
     return render_template("user_info.html",users=users,user_keys=user_keys)
 
+@app.route("/add_user")
+def add_user():
+    return render_template("add_user.html")
+
+    
 if __name__ == "__main__":
     app.run(debug=True)
