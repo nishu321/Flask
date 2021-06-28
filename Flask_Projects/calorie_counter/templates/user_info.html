@@ -1,3 +1,15 @@
 {% extends "base.html" %}
 {% block body %}
+{% for user in users %}
+    <h1>{{ user["name"] }}</h1>
+    {% for key in user_keys %}
+    <ul>
+        {% if key in user_keys[-3:] %}
+            <li>{{ key.title() }}: {{ user[key] }}g</li>
+        {% else %}
+            <li>{{ key.title() }}: {{ user[key] }}</li>
+        {% endif %}
+    </ul>
+    {% endfor %}
+{% endfor %}
 {% endblock body %}

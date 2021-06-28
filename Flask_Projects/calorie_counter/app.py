@@ -1,5 +1,5 @@
 from flask import Flask, render_template, url_for
-from helper import users 
+from helper import users,user_keys
 from form import Counter
 
 
@@ -12,7 +12,7 @@ def index():
 
 @app.route("/user_info/<int:id>")
 def user_info(id):
-    return "User info"
+    return render_template("user_info.html",users=users,user_keys=user_keys)
 
 if __name__ == "__main__":
     app.run(debug=True)
