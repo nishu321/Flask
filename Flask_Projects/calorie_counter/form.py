@@ -1,5 +1,5 @@
 from flask_wtf import FlaskForm
-from wtforms import StringField,RadioField,IntegerField
+from wtforms import StringField,RadioField,IntegerField,SubmitField
 from wtforms.validators import DataRequired, Length, NumberRange
 
 class Counter(FlaskForm):
@@ -42,4 +42,6 @@ class Counter(FlaskForm):
         "Carbs",
         validators=[DataRequired(),NumberRange(min=45,max=65,message="Please enter a number between 45- 65")]
     )
+
+    submit = SubmitField("Add User")
 
