@@ -10,6 +10,8 @@ print(greeting)
 
 x = 1000
 
+#testing
+
 print(f"{x:,}")
 
 # get input (already understand this section)
