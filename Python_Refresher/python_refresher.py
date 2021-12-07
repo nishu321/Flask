@@ -21,7 +21,10 @@ months = years * 12
 print(f"Your age, {years}, is equal to {months} months.")
 
 # list, tuples, and sets (already understand this section)
-
+# list - [ordered, changeable, indexed,duplicates]
+# tuples - (ordered, unchangeable, indexed, duplicates)
+# sets - {unordered, unchangeable, indexed, no duplicates}
+ 
 # Advanced set operations
 friends = {"Bob", "Rolf", "Anne"}
 abroad = {"Bob", "Anne"}
