@@ -145,6 +145,7 @@ print(username_mapping)
 # unpacking function arguments
 # pass in multiple arguments
 def multiply(*args):
+    #creates a tuple of arguments
     print(args)
     total = 1
 
@@ -176,10 +177,11 @@ def add(x, y):
 
 
 nums = [3, 5]
+# puts 3 as x and 5 as y 
 print(add(*nums))
 
 
-# keyword arguments
+# unpacking keyword arguments
 # return dict
 def named(**kwargs):
     print(kwargs)
@@ -195,6 +197,7 @@ def named(name, age):
 
 details = {"name": "Bob", "age": 25}
 
+#same named(name="Bob", age=25)
 named(**details)
 
 
