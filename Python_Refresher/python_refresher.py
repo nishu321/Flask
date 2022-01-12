@@ -379,6 +379,8 @@ class C(A, B):
     def f6(self):
         return "f6"
 
+c = C()
+c.f1
 
 # class composition
 class BookShelf:
