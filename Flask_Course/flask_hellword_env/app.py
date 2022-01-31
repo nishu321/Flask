@@ -13,8 +13,7 @@ def fancy_hello():
     <h1>Greetings!</h1>
     <p>Hello, world</p>
     </body>
-    </html>
     """
 
 if __name__ == "__main__":
-    app.run()
+    app.run(debug=True)
