@@ -1,8 +1,11 @@
 import datetime
 from time import strftime
 from flask import Flask, render_template, request, url_for
+from pymongo import MongoClient
 
 app = Flask(__name__)
+client = MongoClient("mongodb+srv://Nishu:Nishu321@microblogapp.qgmqc.mongodb.net/test")
+app.db = client.microblog
 
 entries = []
 
@@ -12,6 +15,7 @@ def home():
         entery_content = request.form.get("content")
         formatted_date = datetime.datetime.today().strftime("%Y-%m-%d")
         entries.append((entery_content,formatted_date))
+        app.db.entries.insert_one({"content": entery_content, "date": formatted_date})
 
     entries_with_date = [
         (
