@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block content %}
+    <!-- Creating variable using jinja -->
+    {% set num_todos = todos | length %}
+
+    {% if num_todos > 0 %}
+        <p> You have {{ num_todos }} left today.</p>
+    {% else %}
+        <p>You have nothing to do today.</p>
+    {% endif %}
+    <ul>
+        {% for todo in todos %}
+        <li>{{ todo }}</li>
+        {% endfor %}
+    </ul>
+{% endblock %}

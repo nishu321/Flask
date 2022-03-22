@@ -1,5 +1,3 @@
-import re
-from unicodedata import name
 from flask import Flask, render_template
 app = Flask(__name__)
 
@@ -94,6 +92,36 @@ def jinja_loops():
         "Neptune"
     ]
     return render_template('jinja_loops.html',planets=planets)
+
+@app.route("/jinja_variables")
+def jinja_variables():
+    return render_template("jinja_variables.html", todos=["Get Milk", "Learn programming"])
+
+todos = [
+    ("Get milk", False),
+    ("Learn Programing", True)
+]
+
+@app.route("/jinja_macros")
+def jinja_macros():
+    return render_template("jinja_macros.html", todos=todos)
+
+
+#create custome tests
+def square(value):
+    return (value ** 0.5).is_integer()
+
+app.jinja_env.tests["square"] = square
+
+def hello_world(value):
+    return f"Hello World,{value}"
+
+#allowing all templates to access function
+app.jinja_env.globals['hello_world'] = hello_world
+
+@app.route("/jinja_test")
+def jinja_test():
+    return render_template("jinja_test.html")
 
 if __name__ == "__main__":
     app.run(debug=True)

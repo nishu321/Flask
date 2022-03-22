@@ -12,7 +12,7 @@ def index():
 
 @app.route("/user_info/<int:id>")
 def user_info(id):
-    return render_template("user_info.html",users=users,user_keys=user_keys)
+    return render_template("user_info.html",users=users,user_keys=user_keys,id=id)
 
 @app.route("/add_user")
 def add_user():

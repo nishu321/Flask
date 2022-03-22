@@ -1,0 +1,3 @@
+{% macro todo_li(text, completed=False) %}
+    <li>{{ "[x]" if completed else "[]" }} - {{ text }}</li>
+{% endmacro %}
