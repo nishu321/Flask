@@ -116,6 +116,11 @@ app.jinja_env.tests["square"] = square
 def hello_world(value):
     return f"Hello World,{value}"
 
+#injecting varriable to all templates
+@app.context_processor
+def greeting():
+    return {"greeting":"Hello World"}
+
 #allowing all templates to access function
 app.jinja_env.globals['hello_world'] = hello_world
 
