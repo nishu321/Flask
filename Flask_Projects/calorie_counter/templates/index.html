@@ -1,9 +1,9 @@
 {% extends "base.html" %}
 {% block body %}
     <h1>Calorie Counter</h1>
-    {% for user in users %}
+    {% for id, user_name in user_names.items() %}
         <ul>
-            <li><a href="{{ url_for('user_info',id = user['id']) }}">{{ user['name'] }}</a></li>
+            <li><a href="{{ url_for('user_info',id = id) }}">{{ user_name }}</a></li>
         </ul>
     {% endfor %}
 {% endblock body %}
